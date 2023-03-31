@@ -1,2 +1,2 @@
-host = 'localhost'
+host = '10.80.60.253'
 porta = 13131
