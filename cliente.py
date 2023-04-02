@@ -19,7 +19,11 @@ while True:
     data = pickle.dumps((gethostname(), int(num)))
     s.sendall(data)
 
-    servidor, num_novo = pickle.loads(s.recv(1024))
+    try:
+        servidor, num_novo = pickle.loads(s.recv(1024))
+    except:
+        print("Erro interno no Servidor. ")
+        break
     print(f'@[{servidor}]: {num_novo}')
     if num_novo == 0:
         print('\nConexão encerrada do lado do cliente! (cod 0)')
