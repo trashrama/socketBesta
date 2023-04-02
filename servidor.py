@@ -46,7 +46,6 @@ print(f' Número escolhido pelo servidor: {num_servidor}')
 
 ativo = True  # ta ativo o servidor
 
-num_conexoes = 0
 # chat
 while ativo:
     conexao, endereco = s.accept()
