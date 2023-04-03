@@ -2,6 +2,10 @@ def povoar():
     return [[' ', ' ', ' '], [' ', ' ', ' '], [' ', ' ', ' ']]
 
 
+def pegarElemento(vez):
+    return 'X' if vez else 'O'
+
+
 def printar(tabuleiro):
     for lista in tabuleiro:
         for i, item in enumerate(lista):
@@ -37,14 +41,25 @@ def ganhou(tabuleiro):
         print('empate')
 
 
+vez = True  # true = jogador1, false = jogador2
+
 print("JOGAR")
-# nome = input("Escreva seu nome 1")
+jogUm = input("Escreva seu nome 1")
+el = pegarElemento(vez)
+print(f'Você será {el}')
+
+vez = not vez
+
+jogDois = input("Escreva seu nome 1")
+el = pegarElemento(vez)
+print(f'Você será {el}')
+
+vez = not vez
+
 
 tabuleiro = povoar()
-printar(tabuleiro)
 tabuleiro[0][2] = 'X'
 tabuleiro[1][1] = 'X'
 tabuleiro[2][0] = 'X'
 
-printar(tabuleiro)
 ganhou(tabuleiro)
